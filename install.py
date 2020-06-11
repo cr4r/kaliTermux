@@ -52,18 +52,21 @@ def pilih():
 
 			print('\n\n',' Peletakan file '.center(40,'='))
 			x = input('1. File yang didownload tadi apakah mau meletakkan secara manual\n2. path\n(1/2) ==> ')
-			if x =='1':
-				print('Letakkan file di\n/data/data/com.termux/files/home/\nHARAP NAMA FILE JANGAN DI UBAH!!!')
-			elif x == '2':
-				jb = 'y'
-				while jb == 'y' or jb =='ya' or jb=='Ya' or jb=='yes' or jb=='Ya' or p=='iya':
-					try:
-						d = input('Letak filemu ex:(/sdcard/Download)\n==> ')
-						copyfile(d, '~/'+namaSystem)
-						copyfile(d, '~/'+namaSha1)
-						jb = ''
-					except(NameError) as e:
-						print(e)
+			while x == '1' or x=='2':
+				if x =='1':
+					print('Letakkan kedua file di\n/data/data/com.termux/files/home/\nHARAP NAMA FILE JANGAN DI UBAH!!!')
+					x = ''
+				elif x == '2':
+					jb = 'y'
+					while jb == 'y' or jb =='ya' or jb=='Ya' or jb=='yes' or jb=='Ya' or p=='iya':
+						try:
+							d = input('Letak filemu ex:(/sdcard/Download)\n==> ')
+							copyfile(d, '~/'+namaSystem)
+							copyfile(d, '~/'+namaSha1)
+							jb = ''
+						except(NameError) as e:
+							print(e)
+					x = ''
 
 			os.system('chmod +x kali&&cp kali ~')
 			os.system('bash kali')
