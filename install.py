@@ -15,17 +15,17 @@ def pilih():
 	try:
 		plh = int(input('1. Download di termux\n2. Download di browser\n==> '))
 		if plh == 1:
-			jwb ='y'
-			while jb == 'y' or jb =='ya' or jb=='Ya' or jb=='yes' or jb=='Ya' or p=='iya':
-				os.system('rm '+namaSystem)
+			jb ='y'
+			while jb=='y' or jb=='ya' or jb=='Ya' or jb=='yes' or jb=='Ya' or p=='iya':
+#				os.system('rm '+namaSystem)
 				os.system('wget '+syStem)
-				jwb = input('Apakah anda mau mengulang download (y/t)')
+				jb = input('Apakah anda mau mengulang download (y/t)')
 
-			jwb ='y'
+			jb ='y'
 			while jb == 'y' or jb =='ya' or jb=='Ya' or jb=='yes' or jb=='Ya' or p=='iya':
 				os.system('rm '+namaSha1)
 				os.system('wget '+sha1)
-				jwb = input('Apakah anda mau mengulang download (y/t)')
+				jb = input('Apakah anda mau mengulang download (y/t)')
 			try:
 				shutil.move(namaSystem, '~/'+namaSystem)
 				shutil.move(namaSha1, '~/'+namaSha1)
